@@ -1,4 +1,3 @@
-<canvas id="rubberduck" width="800px" height="600px"></canvas>
 window.onload = function() {
   console.log("Design by KD.Chang");
   var duck = document.getElementById('rubberduck');
