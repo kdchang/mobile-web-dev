@@ -12,7 +12,7 @@ window.onload = function() {
   
   function drawDuck() { 
     //Background
-    ctx.fillStyle = 'rgba(0, 205, 255, 1)';
+    ctx.fillStyle = 'rgba(65, 185, 255, 1)';
     ctx.fillRect(0, 0, 750, 650);
     
     //Head
