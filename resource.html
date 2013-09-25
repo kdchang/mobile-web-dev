@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>現代化行動網頁設計入門基礎班:Mobile Web Dev Basic</title>
+        <meta name="description" content="現代化行動網頁設計入門基礎班,Mobile Web App,Mobile Web Dev Basic">
+        <meta name="viewport" content="width=device-width">
+        <meta property="og:title" content="現代化行動網頁設計入門基礎班:Mobile Web Dev Basic"/>
+<!--         <meta property="og:type" content="article"/> -->
+        <meta property="og:website" content="http://kdchang.cc/mobile-web-dev/"/>
+<!--         <meta property="og:image" content=""/> -->
+        <meta property="og:site_name" content="現代化行動網頁設計入門基礎班:Mobile Web Dev Basic"/>
+        <meta property="fb:admins" content=""/>
+        <meta property="og:description"
+              content="現代化行動網頁設計入門基礎班:Mobile Web Dev Basic"/>
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+            .soft-icon {
+				width: 30%;
+            }
+            .screen-logo {
+				width: 60%;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link href="css/pygments-manni.css" rel="stylesheet">
+        <link href="css/docs.css" rel="stylesheet"> 
+        <link href="css/docs-3.css" rel="stylesheet"> 
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="./">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="mailto:ibelieveicaner@gmail.com">Contact</a></li>
+            <li class="active"><a href="./resource.html">Resource</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Course<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Introduction</a></li>
+                <li><a href="#">HTML5 Basic</a></li>
+                <li><a href="#">CSS3 Basic</a></li>
+                <li><a href="#">JavaScript Basic</a></li>
+                <li><a href="#">jQuery Basic</a></li>
+                <li><a href="#">Mobile Web Basic</a></li>
+                <li class="divider"></li>
+<!--                 <li class="dropdown-header">Nav header</li> -->
+                <li><a href="#">Facebook API</a></li>
+                <li><a href="#">Google Map API</a></li>
+                <li><a href="#">Git Basic</a></li>
+                <li><a href="#">node.js Basic</a></li>
+              </ul>
+            </li>
+          </ul>
+<!--           <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </form> -->
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+<!-- Subhead Side-bar
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+  <div class="container">
+    <h1>網站開發相關學習資源</h1>
+    <p class="lead">Web Development & Web Design on-line resource</p>
+  </div>
+</header>
+
+    <!-- Callout for the old docs link -->
+<!--  <div class="bs-old-docs">
+  <div class="container">
+	<p>或有疏漏或有不妥之處煩請來信告知，萬分感謝。</p>
+    We've moved it to a new home while we push forward with Bootstrap 3. <a href="http://blog.getbootstrap.com/">Read the blog</a> for details.
+  </div>
+</div> -->
+
+<!-- Main Doc Content-->
+    <div class="container bs-docs-container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="bs-sidebar hidden-print" role="complementary">
+            <ul class="nav bs-sidenav">          
+				<li>
+				  <a href="#setup">環境建置</a>
+				  <ul class="nav">
+				    <li><a href="#software-install">軟體安裝</a></li>
+				    <li><a href="#tools">開發工具</a></li>
+				  </ul>
+				</li>
+				<li>
+				  <a href="#books">參考書籍</a>
+				  <ul class="nav">
+				    <li><a href="#front-end">前端工程</a></li>
+				    <li><a href="#">行動開發</a></li>
+				    <li><a href="#">後端開發</a></li>
+				    <li><a href="#">網站企劃</a></li>
+				    <li><a href="#">視覺設計</a></li>
+				    <li><a href="#">專案管理</a></li>
+				  </ul>
+				</li> 
+				<li>
+				  <a href="#online">網路資源</a>
+				  <ul class="nav">
+				    <li><a href="#online-learning">線上課程</a></li>
+				    <li><a href="#">技術社群</a></li>
+				  </ul>
+				</li>              
+            </ul>
+          </div>
+        </div>
+
+  <div class="col-md-9" role="main">
+	            <!-- Settings
+	  ================================================== -->
+	  <div class="bs-docs-section">
+	    <div class="page-header">
+	      <h1 id="setup">環境建置</h1>
+	    </div>
+	    <div class="bs-callout bs-callout-info">
+	    	<h4>在開始開發自己的第一個網站之前，最重要的事就是準備好自己的環境。安裝適合的開發工具和軟體將可以讓自己事半功倍</h4>
+	    </div>
+
+	    <h2 id="software-install">軟體安裝</h2>
+	    <hr>	
+	    <h3>一、編輯器</h3>
+	    <img class="soft-icon" src="./img/icon/sublime-text-icon.png" data-url="http://static.oliverwilkerson.com/images/uploads/sublime_text_icon_2181.png" alt="">
+	    <h4><a href="http://www.sublimetext.com/">Sublime Text 2</a></h4>
+	    <p>在這邊推薦大家可以使用Sublime Text 2作為前端網頁開發的編輯器。雖然HTML、CSS、JavaScript只要用一般的文字編輯器就可以開始編輯了（如：記事本），但Sublime Text 2除了免費的優點外（免費版偶爾會跳出購買廣告），還可以客製化自己的編輯器（安裝套件、置換主題等），更可以讓開發網站更有效率</p>
+	    <h3>二、瀏覽器</h3>
+		<img class="soft-icon" src="./img/icon/firefox-icon.png" data-url="http://people.mozilla.org/~faaborg/files/shiretoko/firefoxIcon/firefox-512-noshadow.png" alt="">
+	    <h4><a href="http://mozilla.com.tw/firefox/new/">Firefox 瀏覽器</a></h4>
+	    <p>由非營利組織Mozilla所開發的瀏覽器，在世界各地擁有廣大的支持者和開發社群，提供相當豐富的Add-on外掛可以安裝使用，也有許多的Theme可以客製化自己的瀏覽器，其中Firebug和Firepath是網站開發者常用的工具</p>
+	    <br>
+	    <img class="soft-icon" src="./img/icon/google-chrome-icon.png" data-url="" alt="">
+	    <h4><a href="http://www.google.com/intl/zh-TW/chrome/">Google Chrome 瀏覽器</a></h4>
+	    <p>由Google開發的瀏覽器，具備速度快及整合Google帳號等優勢，但使用記憶體量較大，目前最新版本有提供跨平台開發的模擬工具，是十分的便捷工具</p>
+	    <br>
+
+	    <h2 id="tools">開發工具</h2>
+	    <h3>一、前端模版</h3>
+		<img class="screen-logo" src="./img/icon/html5-boilerplate.jpg" data-url="http://www.docoman.com/assets/html5_boilerplate_by_zerothedesigner-d48ug71.jpg" alt="">
+	    <h4><a href="http://html5boilerplate.com/">HTML5 Boilerplate: The web's most popular front-end template</a></h4>
+	    <p>號稱最多人使用的 HTML5 樣板，其提供預先設定好的 HTML5 範本，讓開發者可以不必從無到有建置 HTML5 網站，也協助處理了一些跨瀏覽器的問題</p>
+	    <br>
+		<img class="screen-logo" src="./img/icon/initializr.png" data-url="http://tridentdesign.com/wp-content/uploads/2012/06/initializr.png" alt="">
+	    <h4><a href="http://www.initializr.com/">Initializr - Start an HTML5 Boilerplate project in 15 seconds!</a></h4>
+	    <p>Initializr 算是 HTML5 Boilerplate 的進階版，可以讓你點選幾個選項後， 自動生成HTML5專案樣板，並且把專案中各個需要的目錄都建置完成，並生成需要用到的工具（包括Robot.txt、Google Analytics、Modernizr），也可以選擇搭配Twitter Bootstrap或是Mobile-first Responsive使用</p>
+	    <br>
+	    <h3>二、CSS框架</h3>
+		<img class="screen-logo" src="./img/icon/twitter-bootstrap.jpg" data-url="http://media02.hongkiat.com/twitter-bootstrap/twitter-bootstrap.jpg" alt="">
+	    <h4><a href="http://getbootstrap.com/2.3.2/">Twitter Bootstrap 2.3.2</a></h4>
+	    <h4><a href="http://getbootstrap.com/2.3.2/">Twitter Bootstrap 3.0.0</a></h4>
+	    <p>Twitter Bootstrap 是由Twitter 公司所開發，是一個功能完整且十分火紅的的Front-End Framework，並提供許多JavaScript的互動機制以及CSS Grid、Responsive Web Design等功能，可以讓開發者免費使用，加快開發速度，快速建構網站基本的雛形，目前已出3.0.0版本，2.3.2仍是較穩定的版本</p>
+	    <br>
+	   	<img class="screen-logo" src="./img/icon/foundation.jpg" data-url="http://ezra.keddell.co.nz/wp-content/uploads/2013/05/foundation.jpg" alt="">
+	    <h4><a href="http://foundation.zurb.com/">ZURB Foundation</a></h4>
+	    <p>由非營利組織Mozilla所開發的瀏覽器，在世界各地擁有廣大的支持者和開發社群，提供相當豐富的Add-on外掛可以安裝使用，也有許多的Theme可以客製化自己的瀏覽器，其中Firebug和Firepath是網站開發者常用的工具</p>
+	    <br>
+	    <h3>三、JavaScript Library</h3>
+		<img class="screen-logo" src="./img/icon/jquery-logo.png" data-url="http://www.deque.com/wbcntnt928/wp-content/dquploads/jquery_logo.png" alt="">
+	    <h4><a href="http://jquery.com/">jQuery</a></h4>
+	    <p>由非營利組織Mozilla所開發的瀏覽器，在世界各地擁有廣大的支持者和開發社群，提供相當豐富的Add-on外掛可以安裝使用，也有許多的Theme可以客製化自己的瀏覽器，其中Firebug和Firepath是網站開發者常用的工具</p>
+	    <br>
+	    <h3>四、JavaScript MVC Framework</h3>
+		<img class="screen-logo" src="./img/icon/backbonejs.jpg" data-url="http://backbonejs.org/docs/images/backbone.png" alt="">
+	    <h4><a href="http://backbonejs.org/">Backbone.js</a></h4>
+	    <p>Backbone.js 是近來頗受開發者喜愛的 Javascript MVC (Model-View-Controller) 框架 (framework) 之一 ，幾個知名的服務包括 Foursquare、Trello 都有使用其當做開發工具</p>
+	    <br>
+	   	<img class="screen-logo" src="./img/icon/angularjs.png" data-url="http://red-badger.com/blog/wp-content/uploads/2013/01/AngularJS-large-resized-e1359375316590.png" alt="">
+	    <h4><a href="http://angularjs.org/">AngularJS — Superheroic JavaScript MVW Framework</a></h4>
+	    <p>AngularJS 是一個Open Source的JavaScript MVC框架，由Google維護，具有宣告式語法 (Directives)、相依性注入 (Dependency Injection)、雙向資料繫結 (Two Way Data-Binding) 以及關注點分離等特性</p>
+	    <br>
+	  </div>
+
+	  <!-- Books
+	  ================================================== -->
+	  <div class="bs-docs-section">
+	    <div class="page-header">
+	      <h1 id="books">參考書籍</h1>
+	    </div>
+	    <div class="bs-callout bs-callout-info">
+	    	<h4>雖然網路上已有相當豐富的學習資源，但許多前輩所撰寫的書籍也非常值得參考，透過有系統的學習可以學習前輩的經驗，亦可發現自己的學習盲點，這邊列出筆者閱讀後覺得不錯的參考書籍。不過理論必須與實務結合，不斷實作練習是學習網頁設計、程式開發的不二法門。透過看書、實作的不斷循環才能讓自己進步的更快</h4>
+	    </div>
+
+	    <h2 id="front-end">前端工程</h2>
+	    <hr>	
+	    <h3>一、HTML</h3>
+<!-- 	    <img class="soft-icon" src="./img/icon/sublime-text-icon.png" data-url="http://static.oliverwilkerson.com/images/uploads/sublime_text_icon_2181.png" alt=""> -->
+	    <h4><a href="http://www.books.com.tw/products/0010546014">HTML&CSS：網站設計建置優化之道</a></h4>
+	    <p>本書為筆者目前看過最易於入門且編排最美觀的 HTML/CSS 入門書，主要講述 HTML4 輔以 HTML5 為補充，但卻不失為了解過去連結未來的好書</p>
+	    <br>
+	    <!-- 	    <img class="soft-icon" src="./img/icon/sublime-text-icon.png" data-url="http://static.oliverwilkerson.com/images/uploads/sublime_text_icon_2181.png" alt=""> -->
+	    <h4><a href="http://www.books.com.tw/products/0010592831?loc=005_003">HTML 5新世代網頁建置：新手也可以快速設計出專業網站</a></h4>
+	    <p>以實際製作專案的方式介紹HTML5，讓學習者可以在學習完後可以對於整體網頁設計有較清楚的觀念</p>
+	    <br>
+	   	<h3>二、CSS</h3>
+<!-- 	    <img class="soft-icon" src="./img/icon/sublime-text-icon.png" data-url="http://static.oliverwilkerson.com/images/uploads/sublime_text_icon_2181.png" alt=""> -->
+	    <h4><a href="http://www.books.com.tw/products/0010584243">CSS3網頁設計師手札(第四版)</a></h4>
+	    <p>以問答的方式，以CSS3解釋平常網頁設計常見問題，討論完整清晰，易於閱讀</p>
+	    <br>
+	    <!-- 	    <img class="soft-icon" src="./img/icon/sublime-text-icon.png" data-url="http://static.oliverwilkerson.com/images/uploads/sublime_text_icon_2181.png" alt=""> -->
+	    <h4><a href="http://www.books.com.tw/products/0010591137">CSS3網頁設計優化：新手也能快速建立跨平台網頁</a></h4>
+	    <p>同樣以完整專案的方式介紹CSS3的實務應用，可以讓學習者更易掌握網站開發流程</p>
+	    <br>
+	   	<h3>三、JavaScript</h3>
+<!-- 	    <img class="soft-icon" src="./img/icon/sublime-text-icon.png" data-url="http://static.oliverwilkerson.com/images/uploads/sublime_text_icon_2181.png" alt=""> -->
+	    <h4><a href="http://www.tenlong.com.tw/items/9862765135?item_id=467872">JavaScript & jQuery: The Missing Manual 國際中文版, 2/e</a></h4>
+	    <p>對於剛入門的朋友來說，使用jQuery來搭配JavaScript來學習更可以觸類旁通，建立比較清楚的觀念。這本書在舉例和說明上清晰易懂，適合入門閱讀</p>
+	    <br>
+	  </div>
+
+	  <!-- Online-learning
+	  ================================================== -->
+	  <div class="bs-docs-section">
+	    <div class="page-header">
+	      <h1 id="online">網路資源</h1>
+	    </div>
+	    <div class="bs-callout bs-callout-info">
+	    	<h4>資訊相關技術發展日新月異，如果是以資訊產業為職業目標的話，唯有不斷的學習才是保持自己競爭力的最好方法。而網路則是獲取新知的最快速也是最便捷的管道，透過參與虛擬和實體的技術社群不但可以吸取前輩的經驗更可以結交志同道合的學習夥伴，讓學習技術之路不再孤單</h4>
+	    </div>
+
+	    <h2 id="online-learning">線上課程</h2>
+	    <hr>	
+	    <h3>一、互動式學習</h3>
+	    <img class="screen-logo" src="./img/icon/codecademy-logo.png" data-url="https://s3.amazonaws.com/kinlane-productions/api-evangelist/codecademy/codecademy.jpg" alt="">
+	    <h4><a href="http://www.codecademy.com/">Codecademy: Learn to code</a></h4>
+	    <p>全球最知名的線上免費學習程式設計的網站，目前提供HTML/CSS/JavaScript、jQuery、PHP、Python、Ruby的課程，本課程也將以Codecademy為輔助教學工具</p>
+	    <br>
+  </div>
+
+<!--row end-->
+    </div>
+
+      <hr>
+
+      <footer>
+        <p>Copyright &copy; 2013</p>
+      </footer>
+    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+		
+		<script src="js/bootstrap-scrollspy.js"></script>
+
+        <script src="js/main.js"></script>
+
+        <script src="js/application.js"></script>
+
+        <!-- AddThis Smart Layers BEGIN -->
+        <!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5204290015021a47"></script>
+        <script type="text/javascript">
+          addthis.layers({
+            'theme' : 'transparent', 
+            'follow' : {
+              'services' : [
+                {'service': 'facebook', 'id': 'KaiDi.Chang'},
+                {'service': 'twitter', 'id': 'ibelieveicaner'},
+                {'service': 'linkedin', 'id': 'kaidichang'},
+                {'service': 'google_follow', 'id': '100098913894471104986'}
+              ]
+            }   
+          });</script>
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-44005098-1', 'kdchang.cc');
+          ga('send', 'pageview');
+
+        </script>
+    </body>
+</html>
