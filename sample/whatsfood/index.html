@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Whatsfood::美食情報第一站</title>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile.structure-1.3.2.min.css" />
+		<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/whatsfood.css" />
+		<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+		<script>
+			var getLocation = function(){
+				if (navigator.geolocation){
+					navigator.geolocation.watchPosition(function(position) {
+					  alert(1);
+					});
+				};
+			};
+
+			var searchResult = function(){
+					//console.log(localStorage.getItem("cityName"));
+					$(document).on('pagebeforeshow', "#citylist", function(){
+					console.log(localStorage.getItem("cityName"));
+					$('#city-title').text(localStorage.getItem("cityName").toUpperCase());
+					$('#dining-data').html('');   
+			        $.getJSON("http://query.yahooapis.com/v1/public/yql?q=%20select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.ipeen.com.tw%2Fsearch%2F" + localStorage.getItem("cityName") + "%2F000%2F0-100-0-0%2F" + localStorage.getItem("keywords") + "%2F%3Fso%3Dsat%22%20and%20xpath%3D%22%2F%2F*%5B%40class%3D'result'%5D%22%20&format=json&diagnostics=true&callback=",function(data){
+			        	$.each(data.query.results.div.div, function(i){
+			        		//console.log(i);
+			        		//console.log(row);
+			        		//console.log(data.query.results.div.div[i].class);
+			        		if(data.query.results.div.div[i].class === 'serShop'){
+			        			//console.log(i);
+			        			//console.log(data.query.results.div.div[i]);
+			        			//console.log(data.query.results.div.div[i].div[1]);
+			        			//data -> serShop ->  serImg/setData 
+			        			var title = data.query.results.div.div[i].h3.a.content;
+			        			var img = data.query.results.div.div[i].div[0].div.
+			        				a.img.src;
+			        			var link = data.query.results.div.div[i].h3.a.href;
+			        			var rank = data.query.results.div.div[i].div[1].ul[1].li[0].img.alt;
+			        			$('#dining-data').append('<li>' + '<a href="#' + link + '">' + '<img src="' + img + '">' + '<h2>' + title + '</h2>' + '<p>' + rank + '</p>' + '</a>' + '</li>');
+			        			$('#dining-data').listview('refresh');
+				        	}
+			        	});
+			        });      
+			    });
+			};
+		</script>
+	</head>
+	<body>
+		<div id="home" data-add-back-btn="true" data-role="page">
+			<!-- Left Panel -->
+			<div data-role="panel" id="left-panel" data-position="left" data-display="push">
+				<div class="nav-head"><h3>地方美食</h3></div>
+				<ul data-role="listview" id="left-panel-nav" data-theme="b" data-icon="false">
+					<li><a nav-name="taiwan" href="#citylist">全台灣</a></li>
+					<li><a nav-name="keelung" href="#citylist">基隆市</a></li>
+					<li><a nav-name="taipei" href="#citylist">台北市</a></li>
+					<li><a nav-name="xinbei" href="#citylist">新北市</a></li>
+					<li><a nav-name="taoyuan" href="#citylist">桃園縣</a></li>
+					<li><a nav-name="hsinchu" href="#citylist">新竹市</a></li>
+					<li><a nav-name="hsinchucounty" href="#citylist">新竹縣</a></li>
+					<li><a nav-name="miaoli" href="#citylist">苗栗縣</a></li>
+					<li><a nav-name="taichung" href="#citylist">台中市</a></li>
+					<li><a nav-name="nantou" href="#citylist">南投縣</a></li>
+					<li><a nav-name="changhua" href="#citylist">彰化縣</a></li>
+					<li><a nav-name="yunlin" href="#citylist">雲林縣</a></li>
+					<li><a nav-name="chiayi" href="#citylist">嘉義市</a></li>
+					<li><a nav-name="chiayicounty" href="#citylist">嘉義縣</a></li>
+					<li><a nav-name="tainan" href="#citylist">台南市</a></li>
+					<li><a nav-name="kaohsiung" href="#citylist">高雄市</a></li>
+					<li><a nav-name="pingtung" href="#citylist">屏東縣</a></li>
+					<li><a nav-name="ilan" href="#citylist">宜蘭縣</a></li>
+					<li><a nav-name="hualien" href="#citylist">花蓮縣</a></li>
+					<li><a nav-name="taitung" href="#citylist">台東縣</a></li>
+					<li><a nav-name="penghu" href="#citylist">澎湖縣</a></li>
+					<li><a nav-name="lianjiang" href="#citylist">連江縣</a></li>
+					<li><a nav-name="kinmen" href="#citylist">金門縣</a></li>
+				</ul>
+			</div>
+			<!-- Main Content -->
+			<div data-role="header" data-position-fixed="true" data-theme="c">
+				<a class="btn" href="#left-panel"><i class="icon-align-justify icon-large"></i></a>
+				<h1>Whatsfood <i class="icon-food"></i></h1>
+			</div>
+			<div data-role="content">
+				<div class="search-box">
+					<h3 class="banner-title">美食情報第一站</h3>
+					<div class="search-form">
+						<form action="" id="search-food" name="search-food">
+							<label for="keywords">今天想吃什麼呢？</label>
+							<input type="text" name="keywords" id="keywords" placeholder="請輸入關鍵字或店名">
+							<select name="search-city" id="search-city">
+								<option value="taiwan">全台灣</option>
+								<option value="keelung">基隆市</option>
+								<option value="taipei">台北市</option>
+								<option value="xinbei">新北市</option>
+								<option value="taoyuan">桃園縣</option>
+								<option value="hsinchu">新竹市</option>
+								<option value="hsinchucounty">新竹縣</option>
+								<option value="miaoli">苗栗縣</option>
+								<option value="taichung">台中市</option>
+								<option value="nantou">南投縣</option>
+								<option value="changhua">彰化縣</option>
+								<option value="yunlin">雲林縣</option>
+								<option value="chiayi">嘉義市</option>
+								<option value="chiayicounty">嘉義縣</option>
+								<option value="tainan">台南市</option>
+								<option value="kaohsiung">高雄市</option>
+								<option value="pingtung">屏東縣</option>
+								<option value="ilan">宜蘭縣</option>
+								<option value="hualien">花蓮縣</option>
+								<option value="taitung">台東縣</option>
+								<option value="penghu">澎湖縣</option>
+								<option value="lianjiang">連江縣</option>
+								<option value="kinmen">金門縣</option>		  
+							</select>
+							<a id="search-submit" href="#citylist"><button class="success" type="submit">送出</button></a>
+						</form>
+					</div>
+				</div>
+			</div>
+        </div>
+        <!-- City Page -->
+		<div data-add-back-btn="true" id="citylist" data-role="page">
+			<!-- Main Content -->
+			<div data-role="header" data-theme="c">
+				<a href="./" class="ui-btn-left ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-up-a" data-icon="arrow-l" data-theme="a">
+					<span class="ui-btn-inner ui-btn-corner-all">
+						<span class="ui-btn-text">Back</span>
+						<span class="ui-icon ui-icon-arrow-l ui-icon-shadow"></span>
+					</span>
+				</a>
+				<h1 id="city-title">Whatsfood</h1>
+			</div>
+			<div data-role="content" data-theme="c">
+				<ul data-role="listview" id="dining-data" data-theme="c"></ul> 
+			</div>
+        </div>
+        <script>
+        	$(document).on("pagebeforeshow", "#home", function(event) {
+			  	getLocation();
+			});
+        	$("[nav-name]").on('click', function(){
+        		//console.log($(this).attr('nav-name'));
+        		//$('#dining-data').html('');
+        		localStorage.removeItem("cityName");
+        		localStorage.removeItem("keywords");
+        		//console.log(localStorage.getItem("cityName"));
+				localStorage.setItem("cityName", $(this).attr('nav-name'));
+				localStorage.setItem("keywords", '');
+				$('#city-title').text(localStorage.getItem("cityName").toUpperCase());
+				console.log(localStorage.getItem("cityName"));
+			});
+
+			$("#search-submit").on('click', function(){
+				localStorage.removeItem("keywords");
+				localStorage.removeItem("cityName");
+				localStorage.setItem("keywords", $('#keywords').
+					val());
+				localStorage.setItem("cityName", $('#search-city').
+					val());
+				//console.log($('#search-city').val());
+			});
+
+			$(document).on("pageinit", "#citylist", function(event) {
+			  	searchResult();
+			});
+        </script>
+        <!-- CityList Page -->
+		<div data-add-back-btn="true" id="dining-content" data-role="page" data-theme="c">
+			<!-- Main Content -->
+			<div data-role="header" data-theme="c">
+				<a href="./" class="ui-btn-left ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-up-a" data-icon="arrow-l" data-theme="a">
+					<span class="ui-btn-inner ui-btn-corner-all">
+						<span class="ui-btn-text">Back</span>
+						<span class="ui-icon ui-icon-arrow-l ui-icon-shadow"></span>
+					</span>
+				</a>
+				<h1 id="city-title">Whatsfood</h1>
+			</div>
+			<div data-role="content" data-theme="c">
+				<ul data-role="listview" id="dining-data" data-theme="c"></ul> 
+			</div>
+        </div>
+	</body>
+</html>
