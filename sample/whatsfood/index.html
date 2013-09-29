@@ -220,19 +220,19 @@
 			   getLocation();
 
 			   var minZoomLevel = 12;
-
+			   var myLatlng = new google.maps.LatLng(localStorage.getItem("latitude"), localStorage.getItem("longitude"));
 			   var map = new google.maps.Map(document.getElementById('map_canvas'), {
 			      zoom: minZoomLevel,
 			      						
-			      center: new google.maps.LatLng(localStorage.getItem("latitude"), localStorage.getItem("longitude")),
+			      center: myLatlng,
 			      mapTypeId: google.maps.MapTypeId.ROADMAP
 			   });
 
-			     var marker = new google.maps.Marker({
-				      position: myLatlng,
-				      map: map,
-				      title:"Hello World!"
-				  });
+		     var marker = new google.maps.Marker({
+			      position: myLatlng,
+			      map: map,
+			      title:"Hello World!"
+			  });
 			});
 		</script>
 	</body>
