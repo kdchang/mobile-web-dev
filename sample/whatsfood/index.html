@@ -210,30 +210,36 @@
 				<h1 id="city-title">Whatsfood</h1>
 			</div>
 			<div data-role="content" data-theme="c" id="content">
-				<div class="map-canvas" id="map_canvas"></div>
+				<div class="map-canvas" id="map-canvas"></div>
 			</div>
-        </div>
-		<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+					<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
 		<script>
 			$(document).on('pageinit', '#geo-map', function(e,data){    
 			   // This is the minimum zoom level that we'll allow
-			   getLocation();
+			    getLocation();
 
-			   var minZoomLevel = 17;
-			   var myLatlng = new google.maps.LatLng(localStorage.getItem("latitude"), localStorage.getItem("longitude"));
-			   var map = new google.maps.Map(document.getElementById('map_canvas'), {
-			      zoom: minZoomLevel,
-			      						
-			      center: myLatlng,
-			      mapTypeId: google.maps.MapTypeId.ROADMAP
-			   });
+				var minZoomLevel = 17;
+				var myLatlng = new google.maps.LatLng(localStorage.getItem("latitude"), localStorage.getItem("longitude"));
+				var map = new google.maps.Map(document.getElementById('map-canvas'), {
+				  zoom: minZoomLevel,
+				  						
+				  center: myLatlng,
+				  mapTypeId: google.maps.MapTypeId.ROADMAP
+				});
 
-		     var marker = new google.maps.Marker({
-			      position: myLatlng,
-			      map: map,
-			      title:"I'm Here"
-			  });
+			    var marker = new google.maps.Marker({
+			       position: myLatlng,
+			       map: map,
+			       title:"I'm Here"
+			    });
 			});
+
+			$(document).on('pagebeforeshow', "#geo-map", function(){
+				$('#map-canvas').listview('refresh');
+			}
+
 		</script>
+        </div>
+
 	</body>
 </html>
