@@ -84,6 +84,7 @@
 			<div data-role="header" data-position-fixed="true" data-theme="c">
 				<a class="btn" href="#left-panel"><i class="icon-align-justify icon-large"></i></a>
 				<h1>Whatsfood <i class="icon-food"></i></h1>
+				<a class="btn" id="location" href="#"><i class="icon-map-marker icon-large"></i></a>
 			</div>
 			<div data-role="content">
 				<div class="search-box">
@@ -140,7 +141,7 @@
 			</div>
         </div>
         <script>
-        	$(document).on("pagebeforeshow", "#home", function(event) {
+        	$("#location").on("click", function(event) {
 			  	getLocation();
 			});
         	$("[nav-name]").on('click', function(){
