@@ -227,6 +227,12 @@
 			      center: new google.maps.LatLng(localStorage.getItem("latitude"), localStorage.getItem("longitude")),
 			      mapTypeId: google.maps.MapTypeId.ROADMAP
 			   });
+
+			     var marker = new google.maps.Marker({
+				      position: myLatlng,
+				      map: map,
+				      title:"Hello World!"
+				  });
 			});
 		</script>
 	</body>
