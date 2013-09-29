@@ -82,7 +82,7 @@ $(document).on('pageinit', '#geo-map', function(e, data){
 	  mapTypeId: google.maps.MapTypeId.ROADMAP
 
 	});
-
+	google.maps.event.trigger(map, 'resize');
     var marker = new google.maps.Marker({
        position: myLatlng,
        map: map,
