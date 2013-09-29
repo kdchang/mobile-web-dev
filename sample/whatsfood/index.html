@@ -14,7 +14,8 @@
 			var getLocation = function(){
 				if (navigator.geolocation){
 					navigator.geolocation.getCurrentPosition(function(position) {
-					  alert(position.coords.latitude, position.coords.longitude);
+					  alert(position.coords.latitude);
+					  alert(position.coords.longitude); 
 					});
 				};
 			};
