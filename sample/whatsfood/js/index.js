@@ -76,16 +76,21 @@ $(document).on('pageinit', '#geo-map', function(e, data){
 
 	var minZoomLevel = 17;
 	var myLatlng = new google.maps.LatLng(localStorage.getItem("latitude"), localStorage.getItem("longitude"));
-	var map = new google.maps.Map(document.getElementById('map-canvas'), {
+	window.map = new google.maps.Map(document.getElementById('map-canvas'), {
 	  zoom: minZoomLevel,			  						
 	  center: myLatlng,
 	  mapTypeId: google.maps.MapTypeId.ROADMAP
 
 	});
-	google.maps.event.trigger(map, 'resize');
+
     var marker = new google.maps.Marker({
        position: myLatlng,
        map: map,
        title:"I'm Here"
     });
+    setTimeout(function() {
+        google.maps.event.trigger(map,'resize');
+    }, 500);
 });
+
+
