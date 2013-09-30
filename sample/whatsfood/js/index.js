@@ -46,7 +46,7 @@ var getDetail = function(){
                //      var recommendation = data.query.results.body.div.div[6].table.tr[9].td.p;
                // else
                //      var recommendation = '無資料';
-               $('#dining-content').html('<dvi>' + '<h3>' + shop + '<br></h3>' + '<h4>營業時間：</h4>' + '<p>' + time + '</p>' + '<h4>商家地址：</h4>' + '<p>' + address + '</p>' + '<a href="tel:' + tel + '"><button class="success" type="submit">電話定位</button></a>' + '</div>');
+               $('#dining-content').html('<dvi>' + '<h3>' + shop + '<br></h3>' + '<h4>營業時間：</h4>' + '<p>' + time + '</p>' + '<h4>商家地址：</h4>' + '<p>' + address + '</p>' + '<a href="tel:' + tel + '"><button class="success" type="submit">電話訂位</button></a>' + '</div>');
           });
      });
 };
