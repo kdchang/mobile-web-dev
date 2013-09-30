@@ -28,10 +28,6 @@
 			    bottom : 0px !important;  
 			    left : 0 !important;     
 			}
-			#map-canvas {
-				height: 100%;
-				width: 100%
-			}
 		</style>
 	</head>
 	<body>
@@ -114,6 +110,22 @@
 				</div>
 			</div>
         </div>
+        <!-- GeoMap Page -->
+		<div data-add-back-btn="true" id="geo-map" data-role="page" data-theme="c">
+			<!-- Main Content -->
+			<div data-role="header" data-theme="c">
+				<a href="./" class="ui-btn-left ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-up-a" data-icon="arrow-l" data-theme="a">
+					<span class="ui-btn-inner ui-btn-corner-all">
+						<span class="ui-btn-text">Back</span>
+						<span class="ui-icon ui-icon-arrow-l ui-icon-shadow"></span>
+					</span>
+				</a>
+				<h1 id="city-title">Whatsfood</h1>
+			</div>
+			<div data-role="content" data-theme="c" id="content">
+				<div class="map-canvas" id="map-canvas"></div>
+			</div>
+        </div>
         <!-- City Page -->
 		<div data-add-back-btn="true" id="citylist" data-role="page">
 			<!-- Main Content -->
@@ -130,11 +142,11 @@
 				<ul data-role="listview" id="dining-data" data-theme="c"></ul> 
 			</div>
         </div>
-        <!-- GeoMap Page -->
-		<div data-add-back-btn="true" id="geo-map" data-role="page" data-theme="c">
+        <!-- Dining Info Content Page -->
+		<div data-add-back-btn="true" id="dining-info-page" data-role="page">
 			<!-- Main Content -->
 			<div data-role="header" data-theme="c">
-				<a href="./" class="ui-btn-left ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-up-a" data-icon="arrow-l" data-theme="a">
+				<a href="./#citylist" class="ui-btn-left ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-up-a" data-icon="arrow-l" data-theme="a">
 					<span class="ui-btn-inner ui-btn-corner-all">
 						<span class="ui-btn-text">Back</span>
 						<span class="ui-icon ui-icon-arrow-l ui-icon-shadow"></span>
@@ -142,8 +154,9 @@
 				</a>
 				<h1 id="city-title">Whatsfood</h1>
 			</div>
-			<div data-role="content" data-theme="c" id="content">
-				<div class="map-canvas" id="map-canvas"></div>
+			<div data-role="content" data-theme="c">
+				<div id="dining-content" data-theme="c">
+				</div> 
 			</div>
         </div>
 	</body>

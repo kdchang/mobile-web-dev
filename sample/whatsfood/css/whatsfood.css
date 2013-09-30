@@ -345,6 +345,7 @@
 	background: linear-gradient(to bottom,  #8fc400 0%,#8fc400 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8fc400', endColorstr='#8fc400',GradientType=0 ); /* IE6-9 */
 	border-radius: 10px;
+	padding: 10px 150px;
 }
 
 .ui-btn-hidden {

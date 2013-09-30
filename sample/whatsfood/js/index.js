@@ -16,53 +16,42 @@ var searchResult = function(){
         			//console.log(data.query.results.div.div[i].div[1]);
         			//data -> serShop ->  serImg/setData 
         			var title = data.query.results.div.div[i].h3.a.content;
-        			var img = data.query.results.div.div[i].div[0].div.
-        				a.img.src;
-        			var link = data.query.results.div.div[i].h3.a.href;
+        			var img = data.query.results.div.div[i].div[0].div.a.img.src;
+        			var link = data.query.results.div.div[i].h3.a.href.split('-')[0];
+        			link = link + "-" + data.query.results.div.div[i].h3.a.content;
+        			//console.log(link);
         			var rank = data.query.results.div.div[i].div[1].ul[1].li[0].img.alt;
-        			$('#dining-data').append('<li>' + '<a href="#' + link + '">' + '<img src="' + img + '">' + '<h2>' + title + '</h2>' + '<p>' + rank + '</p>' + '</a>' + '</li>');
+        			$('#dining-data').append('<li>' + '<a class="info-list"' + 'data-link="' + link + '"' + 'href="#dining-info-page">' + '<img src="' + img + '">' + '<h2>' + title + '</h2>' + '<p>' + rank + '</p>' + '</a>' + '</li>');
         			$('#dining-data').listview('refresh');
 	        	}
         	});
-        });      
+        });     
     });
 };
-/* CityList Page*/
-$("[nav-name]").on('click', function(){
-	//console.log($(this).attr('nav-name'));
-	//$('#dining-data').html('');
-	localStorage.removeItem("cityName");
-	localStorage.removeItem("keywords");
-	//console.log(localStorage.getItem("cityName"));
-	localStorage.setItem("cityName", $(this).attr('nav-name'));
-	localStorage.setItem("keywords", '');
-	$('#city-title').text(localStorage.getItem("cityName").toUpperCase());
-	console.log(localStorage.getItem("cityName"));
-});
 
-
-
-$(document).on("pageinit", "#citylist", function(event) {
-	// $("#search-submit").on('click', function(){
-	localStorage.removeItem("keywords");
-	localStorage.removeItem("cityName");
-	localStorage.setItem("keywords", $('#keywords').
-		val());
-	localStorage.setItem("cityName", $('#search-city').
-		val());
-	//console.log($('#search-city').val());
-// });
-  	searchResult();
-});
-
+var getDetail = function(){
+     $(document).on('pagebeforeshow', '#dining-info-page', function(){
+          $('#dining-content').html('');
+          $.getJSON("http://query.yahooapis.com/v1/public/yql?q=select * from html where url='http://www.ipeen.com.tw" + localStorage.getItem('data-link') + "'" + "&format=json&diagnostics=true&callback=?", function(data) {
+               console.log(data.query.results.body.div.div[6].table);
+               var shop = data.query.results.body.div.div[6].table.tr[0].td.p;
+               var tel = data.query.results.body.div.div[6].table.tr[2].td.p;
+               var address = data.query.results.body.div.div[6].table.tr[3].td.p;
+               var time = data.query.results.body.div.div[6].table.tr[6].td.p;
+               // if(typeof(data.query.results.body.div.div[6].table.tr[8]) !== 'undefined')
+               //      var media = data.query.results.body.div.div[6].table.tr[8].td.a.content;
+               // else
+               //      var media = "無資料";
+               // if(typeof(data.query.results.body.div.div[6].table.tr[9]) !== 'undefined')
+               //      var recommendation = data.query.results.body.div.div[6].table.tr[9].td.p;
+               // else
+               //      var recommendation = '無資料';
+               $('#dining-content').html('<dvi>' + '<h3>' + shop + '<br></h3>' + '<h4>營業時間：</h4>' + '<p>' + time + '</p>' + '<h4>商家地址：</h4>' + '<p>' + address + '</p>' + '<a href="tel:' + tel + '"><button class="success" type="submit">電話定位</button></a>' + '</div>');
+          });
+     });
+};
 
 /* Gelocation */
-
-// var getLocation = function(){
-
-	
-
-// };
 $(document).on('pageinit', '#geo-map', function(e, data){    
    // This is the minimum zoom level that we'll allow
    	if (navigator.geolocation){
@@ -88,9 +77,54 @@ $(document).on('pageinit', '#geo-map', function(e, data){
        map: map,
        title:"I'm Here"
     });
+
     setTimeout(function() {
         google.maps.event.trigger(map,'resize');
     }, 500);
+    
 });
 
+/* CityList Page*/
+$("[nav-name]").on('click', function(){
+	//console.log($(this).attr('nav-name'));
+	//$('#dining-data').html('');
+	localStorage.removeItem("cityName");
+	localStorage.removeItem("keywords");
+	//console.log(localStorage.getItem("cityName"));
+	localStorage.setItem("cityName", $(this).attr('nav-name'));
+	localStorage.setItem("keywords", '');
+	$('#city-title').text(localStorage.getItem("cityName").toUpperCase());
+	console.log(localStorage.getItem("cityName"));
+});
+
+$(document).on("pageinit", "#citylist", function(event) {
+	// $("#search-submit").on('click', function(){
+	localStorage.removeItem("keywords");
+	localStorage.removeItem("cityName");
+	localStorage.setItem("keywords", $('#keywords').val());
+	localStorage.setItem("cityName", $('#search-city').val());
+	//console.log($('#search-city').val());
+// });
+  	searchResult();
+});
+
+
+$(document).on('click', '[data-link]', function(){
+	localStorage.removeItem('data-link');
+	localStorage.setItem('data-link', $(this).attr('data-link'));
+	console.log(localStorage.getItem('data-link'));
+}); 
+
+
+/* Dining Info */
+$(document).on("pageinit", "#dining-info-page", function(event) {
+	// $("#search-submit").on('click', function(){
+	// localStorage.removeItem("keywords");
+	// localStorage.removeItem("cityName");
+	// localStorage.setItem("keywords", $('#keywords').
+	// 	val());
+	// localStorage.setItem("cityName", $('#search-city').
+	// 	val());
+  	getDetail();
+}); 
 
