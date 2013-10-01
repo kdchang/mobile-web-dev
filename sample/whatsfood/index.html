@@ -12,15 +12,6 @@
 		<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
 		<script src="./js/index.js"></script>
 		<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-		<script>
-			(function(d, s, id) {
-			  var js, fjs = d.getElementsByTagName(s)[0];
-			  if (d.getElementById(id)) return;
-			  js = d.createElement(s); js.id = id;
-			  js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=164470223721184";
-			  fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));
-		</script>
 	</head>
 	<body>
 		<div id="home" data-add-back-btn="true" data-role="page">
@@ -137,6 +128,15 @@
         </div>
         <!-- Dining Info Content Page -->
 		<div data-add-back-btn="true" id="dining-info-page" data-role="page">
+					<script>
+			(function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) return;
+			  js = d.createElement(s); js.id = id;
+			  js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=164470223721184";
+			  fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
 			<!-- Main Content -->
 			<div data-role="header" data-theme="c">
 				<a href="./#citylist" class="ui-btn-left ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-up-a" data-icon="arrow-l" data-theme="a">
