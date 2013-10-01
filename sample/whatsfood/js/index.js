@@ -85,7 +85,7 @@ $(document).on('pageinit', '#geo-map', function(e, data){
 });
 
 /* CityList Page*/
-$("[nav-name]").on('click', function(){
+$(document).on('click', '[nav-name]', function(){
 	//console.log($(this).attr('nav-name'));
 	//$('#dining-data').html('');
 	localStorage.removeItem("cityName");
@@ -97,17 +97,19 @@ $("[nav-name]").on('click', function(){
 	console.log(localStorage.getItem("cityName"));
 });
 
-$(document).on("pageinit", "#citylist", function(event) {
-	// $("#search-submit").on('click', function(){
+$(document).on('click', '#search-submit', function(){
+	//console.log($(this).attr('nav-name'));
 	localStorage.removeItem("keywords");
 	localStorage.removeItem("cityName");
 	localStorage.setItem("keywords", $('#keywords').val());
 	localStorage.setItem("cityName", $('#search-city').val());
-	//console.log($('#search-city').val());
-// });
-  	searchResult();
+	$('#city-title').text(localStorage.getItem("cityName").toUpperCase());
+	console.log(localStorage.getItem("cityName"));
 });
 
+$(document).on("pageinit", "#citylist", function(event) {
+  	searchResult();
+});
 
 $(document).on('click', '[data-link]', function(){
 	localStorage.removeItem('data-link');
@@ -115,16 +117,8 @@ $(document).on('click', '[data-link]', function(){
 	console.log(localStorage.getItem('data-link'));
 }); 
 
-
 /* Dining Info */
 $(document).on("pageinit", "#dining-info-page", function(event) {
-	// $("#search-submit").on('click', function(){
-	// localStorage.removeItem("keywords");
-	// localStorage.removeItem("cityName");
-	// localStorage.setItem("keywords", $('#keywords').
-	// 	val());
-	// localStorage.setItem("cityName", $('#search-city').
-	// 	val());
   	getDetail();
 }); 
 
