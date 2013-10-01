@@ -15,6 +15,15 @@
 	</head>
 	<body>
 		<div id="home" data-add-back-btn="true" data-role="page">
+					<script>
+			(function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) return;
+			  js = d.createElement(s); js.id = id;
+			  js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=164470223721184";
+			  fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
 			<!-- Left Panel -->
 			<div data-role="panel" id="left-panel" data-position="left" data-display="push">
 				<div id="fb-root"></div>
@@ -128,15 +137,6 @@
         </div>
         <!-- Dining Info Content Page -->
 		<div data-add-back-btn="true" id="dining-info-page" data-role="page">
-					<script>
-			(function(d, s, id) {
-			  var js, fjs = d.getElementsByTagName(s)[0];
-			  if (d.getElementById(id)) return;
-			  js = d.createElement(s); js.id = id;
-			  js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=164470223721184";
-			  fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));
-		</script>
 			<!-- Main Content -->
 			<div data-role="header" data-theme="c">
 				<a href="./#citylist" class="ui-btn-left ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-up-a" data-icon="arrow-l" data-theme="a">
