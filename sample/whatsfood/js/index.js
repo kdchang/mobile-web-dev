@@ -56,7 +56,7 @@ var getDetail = function(){
                //      var recommendation = data.query.results.body.div.div[6].table.tr[9].td.p;
                // else
                //      var recommendation = '無資料';
-            $('#dining-content').html('<dvi>' + '<h3>' + shop + '<br></h3><div class="fb-like" data-href="http://kdchang.cc/mobile-web-dev/sample/whatsfood/#dining-info-page" data-width="400" data-show-faces="true" data-send="true"></div></div>' + '<h4>營業時間：</h4>' + '<p>' + time + '</p>' + '<h4>商家地址：</h4>' + '<p>' + address + '</p>' + '<a href="tel:' + tel + '"><button class="success" type="submit">電話訂位</button></a>' + '</div>');
+            $('#dining-content').html('<dvi>' + '<h3>' + shop + '</h3><br>' + '<h4>營業時間：</h4>' + '<p>' + time + '</p>' + '<h4>商家地址：</h4>' + '<p>' + address + '</p>' + '<a href="tel:' + tel + '"><button class="success" type="submit">電話訂位</button></a>' + '</div>');
         });
     });
 };
