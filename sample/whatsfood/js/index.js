@@ -30,14 +30,24 @@ var searchResult = function(){
 };
 
 var getDetail = function(){
-     $(document).on('pagebeforeshow', '#dining-info-page', function(){
-          $('#dining-content').html('');
-          $.getJSON("http://query.yahooapis.com/v1/public/yql?q=select * from html where url='http://www.ipeen.com.tw" + localStorage.getItem('data-link') + "'" + "&format=json&diagnostics=true&callback=?", function(data) {
-               console.log(data.query.results.body.div.div[6].table);
-               var shop = data.query.results.body.div.div[6].table.tr[0].td.p;
-               var tel = data.query.results.body.div.div[6].table.tr[2].td.p;
-               var address = data.query.results.body.div.div[6].table.tr[3].td.p;
-               var time = data.query.results.body.div.div[6].table.tr[6].td.p;
+    $(document).on('pagebeforeshow', '#dining-info-page', function(){
+        $('#dining-content').html('');
+        $.getJSON("http://query.yahooapis.com/v1/public/yql?q=select * from html where url='http://www.ipeen.com.tw" + localStorage.getItem('data-link') + "'" + "&format=json&diagnostics=true&callback=?", function(data) {
+            console.log(data.query.results.body.div.div[6].table);
+            //alert(data.query.results.body.div.div[6].table.tr[6].td.p);           
+	        var shop = data.query.results.body.div.div[6].table.tr[0].td.p;
+	        var tel = data.query.results.body.div.div[6].table.tr[2].td.p;
+	        if(typeof(data.query.results.body.div.div[6].table.tr[3].td.p.content) === 'object')
+	        	var address = data.query.results.body.div.div[6].table.tr[3].td.p.content;
+	        else if(data.query.results.body.div.div[6].table.tr[3].td.p.content === 'undefined')
+                var address = '無資料';
+            else
+            	var address = data.query.results.body.div.div[6].table.tr[3].td.p;
+            if(typeof(data.query.results.body.div.div[6].table.tr[6].td.p) !== 'undefined')
+                 var time = data.query.results.body.div.div[6].table.tr[6].td.p;
+            else
+                 var time = "無資料";
+            //var time = data.query.results.body.div.div[6].table.tr[6].td.p;
                // if(typeof(data.query.results.body.div.div[6].table.tr[8]) !== 'undefined')
                //      var media = data.query.results.body.div.div[6].table.tr[8].td.a.content;
                // else
@@ -46,9 +56,9 @@ var getDetail = function(){
                //      var recommendation = data.query.results.body.div.div[6].table.tr[9].td.p;
                // else
                //      var recommendation = '無資料';
-               $('#dining-content').html('<dvi>' + '<h3>' + shop + '<br></h3>' + '<h4>營業時間：</h4>' + '<p>' + time + '</p>' + '<h4>商家地址：</h4>' + '<p>' + address + '</p>' + '<a href="tel:' + tel + '"><button class="success" type="submit">電話訂位</button></a>' + '</div>');
-          });
-     });
+            $('#dining-content').html('<dvi>' + '<h3>' + shop + '<br></h3>' + '<h4>營業時間：</h4>' + '<p>' + time + '</p>' + '<h4>商家地址：</h4>' + '<p>' + address + '</p>' + '<a href="tel:' + tel + '"><button class="success" type="submit">電話訂位</button></a>' + '</div>');
+        });
+    });
 };
 
 /* Gelocation */
