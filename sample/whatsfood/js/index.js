@@ -56,7 +56,7 @@ var getDetail = function(){
                //      var recommendation = data.query.results.body.div.div[6].table.tr[9].td.p;
                // else
                //      var recommendation = '無資料';
-            $('#dining-content').html('<dvi>' + '<h3>' + shop + '<br></h3>' + '<h4>營業時間：</h4>' + '<p>' + time + '</p>' + '<h4>商家地址：</h4>' + '<p>' + address + '</p>' + '<a href="tel:' + tel + '"><button class="success" type="submit">電話訂位</button></a>' + '</div>');
+            $('#dining-content').html('<dvi>' + '<h3>' + shop + '<br></h3><div class="fb-like" data-href="http://kdchang.cc/mobile-web-dev/sample/whatsfood/#dining-info-page" data-width="300" data-show-faces="true" data-send="true"></div></div>' + '<h4>營業時間：</h4>' + '<p>' + time + '</p>' + '<h4>商家地址：</h4>' + '<p>' + address + '</p>' + '<a href="tel:' + tel + '"><button class="success" type="submit">電話訂位</button></a>' + '</div>');
         });
     });
 };
@@ -129,6 +129,14 @@ $(document).on('click', '[data-link]', function(){
 
 /* Dining Info */
 $(document).on("pageinit", "#dining-info-page", function(event) {
+
+	(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=164470223721184";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
   	getDetail();
 }); 
 
