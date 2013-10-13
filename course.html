@@ -17,6 +17,7 @@
         <meta property="fb:admins" content=""/>
         <meta property="og:description"
               content="現代化行動網頁設計入門基礎班:Mobile Web Dev Basic"/>
+        <meta name="viewport" content="width=device-width">
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <style>
@@ -24,13 +25,18 @@
                 padding-top: 50px;
                 padding-bottom: 20px;
             }
+            .thumnail:hover {
+              opacity: 0.8;
+            }
+            a:hover {
+              text-decoration: none;
+            }
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
         <link href="css/pygments-manni.css" rel="stylesheet">
         <link href="css/docs.css" rel="stylesheet"> 
         <link href="css/docs-3.css" rel="stylesheet"> 
-
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
@@ -49,10 +55,10 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="./">Home</a></li>
+            <li><a href="./">Home</a></li>
             <li><a href="./about.html">About</a></li>
             <li><a href="mailto:ibelieveicaner@gmail.com">Contact</a></li>
-            <li><a href="./course.html"></a></li>
+            <li class="active"><a href="./course.html"></a></li>
             <li><a href="./resource.html">Resource</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Document<b class="caret"></b></a>
@@ -85,24 +91,92 @@
       </div>
     </div>
 
-  <div class="jumbotron masthead"> 
-    <div class="container"> 
-      <h1>Mobile Web Dev Basic</h1> 
-      <p>希望讓沒有基礎的學員能在學習完課程後具備自學能力</p> 
-      <p> 
-        <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-large">立馬報名</a>
-        <a href="./about.html" class="btn btn-info btn-large">課程內容</a>  
-      </p> 
-      <div id="fb-root"></div>
-<!-- <fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
-<button id="flogout" style="visibility:visible;" onclick="logout();">Logout</button> -->
-<!--       <ul class="masthead-links"> 
-        <li> Version 1.0 </li> 
-      </ul>  -->
+ <div class="container bs-docs-container">
+      <div class="row">
+
+        <div class="col-md-12" role="main">
+            <!-- Getting started
+  ================================================== -->
+      <div class="bs-docs-section">
+        <div class="page-header">
+          <h1 id="download">現代化行動網頁設計基礎入門班</h1>
+        </div>
+        <div>
+          <h3>課程目的：</h3>
+          <p>希望藉由這次課程能讓對於網頁設計有興趣的同學可以有一個入門的管道，在上完課程後可以有足夠的自學能力能夠持續學習進修，進而將自己的點子付諸實踐，開發出屬於自己的Mobile Web App</p>
+          <br>
+        </div>
+        <div>
+          <h3>課程介紹：</h3>
+          <p>隨著智慧型裝置的起飛，現在幾乎已是人手一支智慧型手機，根據統計今年全球智慧型手機出貨量已達10億支，由於大量的需求，開發Mobile Web也成為原生（Native App）外另一種較低成本的選擇。因此本課程將著重在網頁開發基礎介紹以及如何運用HTML5/CSS3（Bootstrap）/JavaScript（jQuery、Backbone.js）來開發Mobile Web App。希望讓沒有基礎（或有基礎）的學員能在學習完課程後具備自學能力未來能持續進修，進而開發出搭配Facebook API、Google Map API的Mobile Web App</p>
+        </div>
+        <div class="bs-callout bs-callout-info">
+          <h3>課程大綱</h3>
+          <p>1. 網路發展簡介、網站設計流程介紹、HTML5基礎介紹與實務</p>
+          <p>2. CSS基礎介紹（選擇器、Basic Box Model、排版、CSS3特色、media query）</p>
+          <p>3. Javascript 基礎語法、流程控制、函式、物件特性、基礎 DOM API操作
+          <p>4. jQuery基礎與應用、事件處理、Ajax應用（HTTP 簡介）、YQL簡介</p>
+          <p>5. Twitter Bootstrap CSS Framework實戰、Mobile Web特性與Framework簡介
+          <p>6. Facebook API、Google Map API簡介與應用</p>
+          <p>7. 專案開發</p>
+          <p>*課程規劃將視學員程度和時間做調整</p>
+        </div>
+        <div class="bs-callout bs-callout-warning">
+          <h3>課程時間、地點</h3>
+          <h4>由於報名人數踴躍，所以分為A、B兩班上課，B班因為場地可用時間較長會多教些內容，若遇期中考週暫停一次</h4>
+          <p>A班：10/3（四）開始，每週四8:30pm-10:30pm上課，共20小時</p>
+          </p>B班：10/7（一）開始，每週一7:00pm-9:00pm上課，共20小時</p>
+          <h4>上課地點：</h4>
+          <p>A班：台大大一女宿舍學習中心</p>
+          </p>B班：台大男一宿舍學習中心（台大男一舍正對面）</p>
+        </div>
+        <div>
+          <h3>主辦單位：</h3>
+          <p>台灣大學學務處住宿組同儕團體</p>
+        </div>
+        <div>
+          <h3>講師介紹：</h3>
+          <div><img class="thumnail" style="border-radius: 60%;height: 160px;width: 160px;margin-top:30px;margin-bottom:30px;" src="./img/KD.Chang.png" alt=""></div>
+          <p>
+          張凱迪（KD.Chang），目前是臺大資管所研究生，研究領域為：Web Mining，Web IR，服務過電子商務公司和活動入口網站，也曾參與數個組織的創辦。是個半路出家的工程師，致力於整合科技與人文，讓這個世界更加開放美好。夢想是辦一所心目中理想的學校
+          </p>
+        </div>
+        <div>
+          <h3>適合對象：</h3>
+          <h4>歡迎無基礎但真正有心學習的朋友報名，煩請自備筆電
+          </h4>
+          <p>1. 必要能力：
+          不排斥學習新事物並願意主動付出時間精力學習以及基礎英文技術文件之閱讀與理解能力，更重要的是要有一顆熱愛網路的心
+          </p>
+          <p>2.  建議能力：
+            過去有學習任何一種程式語言或是有使用內容管理系統（CMS）經營部落格（如：Wordpress）</p> 
+          <p>使用工具：
+          任何文字編輯器 (Notepad++，Vim) 均可，講師將會使用 Sublime Text 2 進行講解
+          </p>
+        </div>
+        <div>
+          <h3>參考書目：</h3>
+          <p>
+          本課程側重實務應用將會規劃作業，並搭配<a href="http://www.codecademy.com/">Codecademy</a>作為輔助學習工具
+          </p>
+          <p>1. HTML 5新世代網頁建置：新手也可以快速設計出專業網站
+          (HTML&CSS：網站設計建置優化之道)</p>
+          <p>2. CSS3網頁設計優化：新手也能快速建立跨平台網頁（CSS3網頁設計師手札(第四版)）</p>
+          <p>3. JavaScript & jQuery: The Missing Manual 國際中文版, 2/e
+             (jQuery網頁設計範例教學、jQuery實戰手冊(第二版))</p>
+        </div>
+        <div class="bs-callout bs-callout-danger">
+          <h3>報名費用：</h3>
+          <h4>免費（但須於第一次上課繳交保證金NT200，由於資源有限，若出席超過八成全額退回保證金，若遇不克抗力之原因可以請假，收取的保證金將全額捐給慈善機構）</h4>
+          <h3>報名資格：</h3>
+          <h4>台大學生優先，每班25人，即日起到9/18（三）12:00pm報名截止，9/19（四）通知上課名單（若遇報名人數過多將提前截止，將依學習動機、能否全程參與以及報名順序等選出上課學員，請盡量展現想學習的熱忱）</h4>
+
+        </div>
+        <div><a data-toggle="modal" href="#myModal"><button type="button" class="btn btn-success btn-lg btn-block">馬上報名</button></a></div>  
+      </div>
     </div>
   </div>
-
-  <!-- Modal -->
+    <!-- Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -114,7 +188,7 @@
           <h4>同學您好，</h4>
           <h4>非常感謝您對於「現代化行動網頁設計基礎入門班（免費）」感興趣，但由於報名人數踴躍，報名人數已超過200人次，故提前截止報名。請參閱<a href="https://docs.google.com/file/d/0B4Y_BV2TwcgMbmJhY3lGMkNPc0k/edit?usp=sharing">錄取名單</a></h4>
           <h4>
-            相關資訊和投影片會放到<a href="http://kdchang.cc/mobile-web-dev/">課程網站</a>上可以參考
+            相關資訊和投影片會放到<a href="http://kdchang.cc/102F-NTUWebDev/">課程網站</a>上可以參考
             </h4>
           <h4>
             或可以參考Mr.Orz在<a href="http://mrorz.github.io/webdev/">台大資工系統訓練班的課程</a>或是<a href="https://my.ntu.edu.tw/register/viewcoursemain.asp">台大計中</a>也有開設相關課程
@@ -128,45 +202,6 @@
   </div><!-- /.modal -->
 
 
-  <div class="bs-docs-social"> 
-    <div class="container"> 
-      <ul class="bs-docs-social-buttons"> 
-        <li> 
-          <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=KD-Chang&repo=mobile-web-dev&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe> 
-        </li> 
-        <li> 
-           <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a> 
-        </li>
-        <li>
-            <a class="addthis_button_google_plusone" g:plusone:size="medium"></a> 
-        </li>
-        <li> 
-          <a class="addthis_button_tweet"></a>
-        </li> 
-      </ul> 
-    </div> 
-  </div> 
-
-    <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-lg-4">
-          <img style="width:150px; height:auto;" src="img/html5-logo.png" alt="">
-          <h2>HTML5</h2>
-          <p>搭配網路發展簡介、網站設計流程介紹、以及HTML5基礎介紹與實務</p>
-        </div>
-        <div class="col-lg-4">
-          <img style="width:150px; height:auto;" src="img/css3-logo.png" alt="">
-          <h2>CSS3</h2>
-          <p>課程將以CSS基礎介紹為主（選擇器、Basic Box Model、排版、CSS3特色、media query）</p>
-       </div>
-        <div class="col-lg-4">
-          <img style="width:150px; height:auto;" src="img/js-logo.png" alt="">
-          <h2>Javascript（jQuery）</h2>
-          <p>課程將介紹Javascript 基礎語法、流程控制、函式、物件特性、基礎 DOM API操作，並結合jQuery基礎與應用、事件處理、Ajax應用（HTTP 簡介）、YQL簡介</p>
-        </div>
-      </div>
-
       <hr>
 
       <footer>
@@ -178,24 +213,6 @@
         <script src="js/vendor/bootstrap.min.js"></script>
 
         <script src="js/main.js"></script>
-
-        <script src="js/application.js"></script>
-
-        <!-- AddThis Smart Layers BEGIN -->
-        <!-- Go to http://www.addthis.com/get/smart-layers to customize -->
-        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5204290015021a47"></script>
-        <script type="text/javascript">
-          addthis.layers({
-            'theme' : 'transparent', 
-            'follow' : {
-              'services' : [
-                {'service': 'facebook', 'id': 'KaiDi.Chang'},
-                {'service': 'twitter', 'id': 'ibelieveicaner'},
-                {'service': 'linkedin', 'id': 'kaidichang'},
-                {'service': 'google_follow', 'id': '100098913894471104986'}
-              ]
-            }   
-          });</script>
 
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
