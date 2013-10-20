@@ -4,15 +4,22 @@
    Author's custom styles
    ========================================================================== */
 
-
-
-
-
-
-
-
-
-
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+.thumnail:hover {
+  opacity: 0.8;
+}
+a:hover {
+  text-decoration: none;
+}
+.soft-icon {
+	width: 30%;
+}
+.screen-logo {
+	width: 60%;
+}
 
 
 
