@@ -1,10 +1,20 @@
+
+
+
+
 <head>
 	<script>
-		alert("Hello JavaScript");
+		var num = ['http://www.moneydj.com/z/sjn/JPG/GetNewsRptJPG.djJPG?a=132353', 'http://www.todaycolor.com.tw/TempPic/rubberduck/tshirt/index/j20.jpg', 'http://www.todaycolor.com.tw/TempPic/rubberduck/tshirt/index/j20.jpg'];
+for(var i = 0; i < num.length; i++){  
+//建議條件不要寫死，可以3可以改使用num.length
+     document.write('<img src="'+ num[i] + '">');
+ }
 	</script>
 </head>
 
 </body>
+
+
 
 p {
 	color: red;
